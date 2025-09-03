@@ -117,7 +117,7 @@
             this.txtLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLink.Location = new System.Drawing.Point(114, 54);
             this.txtLink.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLink.MinimumSize = new System.Drawing.Size(0, 25);
+            this.txtLink.MinimumSize = new System.Drawing.Size(4, 25);
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(568, 22);
             this.txtLink.TabIndex = 3;

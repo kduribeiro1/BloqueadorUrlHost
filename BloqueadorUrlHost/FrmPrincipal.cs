@@ -309,7 +309,28 @@ namespace BloqueadorUrlHost
         {
             try
             {
-                string hostsPath = @"C:\Windows\System32\drivers\etc\hosts";
+                string hostsPath = @"C:\Windows\System32\drivers\etc\hosts"; 
+                string backupPath = @"C:\Windows\System32\drivers\etc\hosts_old";
+                int i = 1;
+                // Cria backup do arquivo Hosts
+                if (File.Exists(hostsPath))
+                {
+                    while (File.Exists(backupPath))
+                    {
+                        backupPath = $@"C:\Windows\System32\drivers\etc\hosts_old{i}";
+                        i++;
+                    }
+                    try
+                    {
+                        File.Copy(hostsPath, backupPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao criar backup do arquivo hosts: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+
                 var linhas = new List<string>();
 
                 // Lê o conteúdo atual do arquivo Hosts
